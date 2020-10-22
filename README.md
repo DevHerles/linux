@@ -49,3 +49,34 @@ java      26840          herles  104u  IPv6 314069      0t0  TCP 127.0.0.1:39421
 ⬢  ~
 ❯
 ```
+
+## 3. Using `netstat` to list open ports
+
+```bash
+❯ sudo netstat -tulpn | grep LISTEN
+tcp        0      0 127.0.0.1:36085         0.0.0.0:*               LISTEN      1020/containerd
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      741/systemd-resolve
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      935/cupsd
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      1058/postgres
+tcp        0      0 0.0.0.0:7071            0.0.0.0:*               LISTEN      974/anydesk
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      1697/docker-proxy
+tcp6       0      0 :::9068                 :::*                    LISTEN      1677/docker-proxy
+tcp6       0      0 :::9069                 :::*                    LISTEN      1647/docker-proxy
+tcp6       0      0 127.0.0.1:63342         :::*                    LISTEN      3606/java
+tcp6       0      0 127.0.0.1:37903         :::*                    LISTEN      13283/java
+tcp6       0      0 :::80                   :::*                    LISTEN      1725/docker-proxy
+tcp6       0      0 :::6068                 :::*                    LISTEN      1678/docker-proxy
+tcp6       0      0 :::6069                 :::*                    LISTEN      1648/docker-proxy
+tcp6       0      0 ::1:631                 :::*                    LISTEN      935/cupsd
+tcp6       0      0 :::5432                 :::*                    LISTEN      1058/postgres
+tcp6       0      0 :::443                  :::*                    LISTEN      1710/docker-proxy
+tcp6       0      0 127.0.0.1:39421         :::*                    LISTEN      26840/java
+tcp6       0      0 127.0.0.1:6942          :::*                    LISTEN      3606/java
+tcp6       0      0 127.0.0.1:39871         :::*                    LISTEN      3606/java
+tcp6       0      0 127.0.0.1:60199         :::*                    LISTEN      13283/java
+tcp6       0      0 :::6600                 :::*                    LISTEN      1/init
+tcp6       0      0 127.0.0.1:42507         :::*                    LISTEN      3606/java
+
+⬢  ~
+❯
+```
